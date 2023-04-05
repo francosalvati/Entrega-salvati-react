@@ -1,4 +1,4 @@
-const CardWidget = () => {
+const CartWidget = () => {
     return (
         <>
             <button type="button" className="btn btn-outline-light position-relative" >
@@ -13,4 +13,4 @@ const CardWidget = () => {
     )
 }
 
-export default CardWidget
+export default CartWidget

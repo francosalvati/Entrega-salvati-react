@@ -1,5 +1,5 @@
 
-import CardWidget from '../CardWidget/CardWidget'
+import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
 
 
@@ -30,7 +30,7 @@ function NavBar() {
 
 
                         <div className="text-end col">
-                            <CardWidget />
+                            <CartWidget />
                         </div>
                     </div>
                 </div>
