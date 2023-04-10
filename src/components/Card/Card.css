@@ -1,0 +1,32 @@
+.item{
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.card__img{
+    height: 300px;
+}
+
+.card__img img{
+    position: relative;
+    height: 300px;
+    object-fit: cover;
+}
+
+.item:hover {
+    transition: 1s;
+    transform: scale(1.01);
+    box-shadow: 0 0 -5px 20px #000;
+}
+
+.item-title{
+    font-size: 30px;
+}
+.detalles{
+    position: absolute;
+    top: 250px;
+    right: 10px;
+    border: none;
+    background: #aaaaaa72;
+}

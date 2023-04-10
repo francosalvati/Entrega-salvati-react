@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
 
@@ -21,10 +22,10 @@ function NavBar() {
 
                         <div className='col'>
                             <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                                <li><a href="#" className="nav-link px-2 text-white">Medias</a></li>
-                                <li><a href="#" className="nav-link px-2 text-white">Gorras</a></li>
-                                <li><a href="#" className="nav-link px-2 text-white">Rinios</a></li>
-                                <li><a href="#" className="nav-link px-2 text-white">Picas</a></li>
+                                <li><Link to={`/category/socks`} className="nav-link px-2 text-white">Medias</Link></li>
+                                <li><Link to={`/category/cap`} className="nav-link px-2 text-white">Gorras</Link></li>
+                                <li><Link to={`/category/t-shirt`} className="nav-link px-2 text-white">Remeras</Link></li>
+                                <li><Link to={`/category/grinder`} className="nav-link px-2 text-white">Picas</Link></li>
                             </ul>
                         </div>
 

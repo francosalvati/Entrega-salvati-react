@@ -1,4 +1,11 @@
 .catalogo{
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.contenedor{
+    margin: 0;
+    height: calc(100vh - 74px);
 }
