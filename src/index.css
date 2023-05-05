@@ -13,12 +13,28 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-html{ 
-  background: #333;
+
+html {
+  background: #666;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  /* Ancho de la barra */
+  background-color: transparent;
+  /* Fondo transparente */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #666;
+  /* Color de la barra */
+  border-radius: 3px;
+  /* Borde redondeado */
 }

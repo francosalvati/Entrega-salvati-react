@@ -1,0 +1,14 @@
+
+.img{
+    display: grid;
+    place-content: center;
+    min-height: 80vh;
+}
+.img img{
+    height: 400px;
+    object-fit: cover;
+}
+
+.details__description{
+    font-size: 20px;
+}

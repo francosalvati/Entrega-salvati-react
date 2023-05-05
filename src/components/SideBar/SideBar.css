@@ -1,0 +1,47 @@
+nav{
+    min-height: calc(100vh - 75px);
+}
+
+nav ul li{
+    font-size: 15px;
+}
+
+
+.nav__filter .nav-link{
+    color: #666;
+    transition: .3s all ;
+}
+
+.nav__filter .nav-link:hover{  
+    color: red;
+    transform: translateX(20px);
+}
+
+.nav__category .nav-link{
+    color: #666;
+    transition: .3s all ;
+}
+
+.nav__category .nav-link:hover{  
+    color: red;
+    transform: translateX(20px);
+}
+
+.nav__shop .nav-link{
+    color: #666;
+    transition: .3s all ;
+}
+
+.nav__shop .nav-link:hover{  
+    color: #1a769b;
+    transform: translateX(20px);
+}
+
+
+.nav__config li a {
+    color: red;
+}
+
+.filter{ 
+    border-radius: 0;
+}

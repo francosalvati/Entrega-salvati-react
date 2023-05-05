@@ -7,6 +7,10 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
+import { initFirebase } from './firebase/config'
+
+
+initFirebase()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

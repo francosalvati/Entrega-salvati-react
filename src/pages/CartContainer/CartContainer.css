@@ -1,0 +1,47 @@
+
+.cart{
+    height: 70vh;
+}
+
+.cart__container{
+    width: 70%;
+    padding: 20px 10px;
+    border-radius: 3px;
+    overflow-y: scroll;
+}
+
+.carrito{
+    border-bottom:1px rgb(231, 231, 231) solid ;
+    font-size: 20px;
+    font-weight: 400; 
+}
+
+
+.height{
+    height: 100%
+}
+
+
+.cart__list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.cart__item{
+    border-bottom: 1px solid #eee;
+}
+
+.item__name{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.counter{
+    width: 120px;
+    font-size: 20px;
+}
+
+.counter .btn{
+    border: 1px solid #aaa;
+}

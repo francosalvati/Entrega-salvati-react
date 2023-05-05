@@ -1,0 +1,13 @@
+header{
+    height: 75px;
+    background: #333;
+}
+
+.logo{
+    font-family: var(--fuente);
+}
+
+.toolbar{
+    margin: auto;
+    max-width: 1300px;
+}
