@@ -1,17 +1,13 @@
 
 import Product from "../Product/Product"
-import { useCartContext } from "../../../context/CartContext"
 
 //css
 import "./ProductList.css"
+import { memo } from "react"
 
 
-export const ProductList = ({ products }) => {
+export const ProductList = memo(({ products }) => { 
 
-    const onAdd = (quantity) => {
-        console.log(quantity)
-        onAddCart({ product, quantity })
-    }   
 
     return (
         <>
@@ -28,4 +24,4 @@ export const ProductList = ({ products }) => {
         }
         </>
     )
-}
+})

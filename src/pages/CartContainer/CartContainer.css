@@ -1,14 +1,10 @@
 
 .cart{
-    height: 70vh;
+    height: 80vh;
 }
 
-.cart__container{
-    width: 70%;
-    padding: 20px 10px;
-    border-radius: 3px;
-    overflow-y: scroll;
-}
+
+/* titulo  */
 
 .carrito{
     border-bottom:1px rgb(231, 231, 231) solid ;
@@ -16,11 +12,31 @@
     font-weight: 400; 
 }
 
-
-.height{
-    height: 100%
+.cart__grid{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 50px 1fr 70px;
 }
 
+.cart__container{
+    width: 80%;
+    padding: 20px 10px;
+    border-radius: 3px;
+    overflow-y: scroll;
+}
+
+.cart__actions{
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+/* items */
 
 .cart__list{
     padding: 0;
@@ -45,3 +61,16 @@
 .counter .btn{
     border: 1px solid #aaa;
 }
+
+.item__delete, .cart__clean-cart{
+    cursor: pointer;
+    
+}
+
+.item__delete:hover , .cart__clean-cart:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+/* actions */
+

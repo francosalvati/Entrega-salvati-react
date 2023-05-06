@@ -7,6 +7,7 @@ import { ProductsContainer } from "./pages/ProductsContainer/ProductsContainer";
 import { DetailsContainer } from "./pages/DetailsContainer/DetailsContainer";
 import SideBar from "./components/SideBar/SideBar";
 import { Toolbar } from "./components/Toolbar/Toolbar";
+import { ComprasContainer } from "./pages/Compras/Compras";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
               <Route exact path="/:pid" element={<ProductsContainer />} />
               <Route exact path="/details/:id" element={<DetailsContainer />} />
               <Route exact path="/cart" element={<CartContainer />} />
+              <Route exact path="/compras" element={<ComprasContainer />} />
             </Routes>
           </div>
         </div>

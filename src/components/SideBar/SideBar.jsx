@@ -29,7 +29,7 @@ function SideBar() {
                 <li className='text-muted fs-6 fw-bold border my-2 p-2'> Compras </li>
                 <span className='nav__shop' >
                     <li><Link className="nav-link px-2">Carrito</Link></li>
-                    <li><Link className="nav-link px-2">Compras</Link></li>
+                    <li><Link to={`/compras`} className="nav-link px-2">Compras</Link></li>
                 </span>
                 <li className='text-muted fs-6 fw-bold border my-2 p-2'> Mas </li>
                 <span className='nav__config'>

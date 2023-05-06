@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CheckOut } from "../../../CheckOut/CheckOut";
 
-export const DetailsCounter = ({ initial, stock, onAdd }) => {
+export const DetailsCounter = ({ initial, stock, onAdd, product}) => {
 
     const [quantity, setQuantity] = useState(initial)
 
@@ -37,7 +37,7 @@ export const DetailsCounter = ({ initial, stock, onAdd }) => {
                             <small className="text-start">Stock: {stock}</small>
                         </div>
                         <div className="w-100 d-flex flex-column align-items-center ">
-                            <CheckOut btn={'Comprar Ahora'}/>
+                            <CheckOut btn={'Comprar Ahora'} product={product}/>
                             <button className="btn btn-outline-primary w-75 mt-4" onClick={handleOnAdd}>Agregar al Carrito</button>
                         </div>
                     </>
