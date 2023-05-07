@@ -18,8 +18,8 @@ export const CartContextProvider = ({ children }) => {
 
     useEffect(() => {
         const cartString = localStorage.getItem("cart")
-        const cartJson = JSON.parse(cartString)
-        if (cartJson[0]) {
+        const cartJson = cartString ? JSON.parse(cartString) : []
+        if (Array.isArray(cartJson) && cartJson.length > 0){
             setCartList(cartJson);
         }
     }, [])
