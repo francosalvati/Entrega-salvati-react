@@ -11,7 +11,7 @@ export const CartContainer = () => {
         cartList,
         totalPrice,
         handleCleanCart,
-        deleteProduct,
+        deleteProduct
     } = useCartContext()
 
     return (
@@ -22,11 +22,10 @@ export const CartContainer = () => {
                         <div className="cart__grid">
                             <h3 className="carrito align-self-end pb-3 ps-5 m-0 ">Carrito</h3>
                             <CartList cartList={cartList} deleteProduct={deleteProduct}/>
-                            <ul className="cart__actions d-flex align-item-start justify-content-around ls-none">
+                            <ul className="cart__actions d-flex align-items-center justify-content-around">
                                 <li className="cart__clean-cart" onClick={handleCleanCart}>Vaciar Carrito</li>
                                 <div className="">
-                                <li className="">Total: {totalPrice()}</li>
-                                <li className="">Resumen: {totalPrice()}</li>
+                                <li className="">  <span className="fs-5 fw-bold">Total: </span>{totalPrice()}</li>
                                 </div>
                                 <li className="">
                                     <CheckOut btn={'Comprar'} cart={true} carrito={true} />

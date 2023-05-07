@@ -74,3 +74,13 @@
 
 /* actions */
 
+.cart__actions{
+    min-height: 100px;
+}
+
+
+/* item */
+.cart__item img{
+    height: 50px;
+    width: 50px;
+}

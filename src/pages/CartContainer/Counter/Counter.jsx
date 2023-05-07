@@ -1,19 +1,21 @@
 import { useState } from "react";
 
-export const Counter = ({ min = 1, max, init = 1 }) => {
+export const Counter = ({ min = 1, max, init = 1}) => {
 
   const [ number, setNumber ] = useState(init);
 
-  function onHandleNumberAdd(){
-    if(number < max ) setNumber(number + 1)
+  const onHandleNumberAdd = () => {
+    if(number <= max ) setNumber(number + 1)
+
   }
 
-  function onHandleNumberRest(){
+  const onHandleNumberRest = () =>{
     if(number > min) setNumber(number - 1)
   }
 
+
   return (
-    <div className="counter">
+    <div className="counter text-center">
         <div className="input-group p-0">
           <button
             className="btn btn-outline"
@@ -24,8 +26,8 @@ export const Counter = ({ min = 1, max, init = 1 }) => {
             -
           </button>
           <input
-            type="text" 
-            className="form-control text-center"
+            type="number" 
+            className="form-control text-center m-auto"
             aria-label="Example text with button addon"
             aria-describedby="button-addon1"
             readOnly

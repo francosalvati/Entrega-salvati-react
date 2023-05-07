@@ -5,8 +5,9 @@ import { useCartContext } from "../../context/CartContext"
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 
 
-export const CheckOut = ({ btn, cart, product}) => {
+export const CheckOut = ({ btn, cart, product }) => {
 
+    console.log(product)
     //states
     const [id, setId] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
@@ -16,20 +17,25 @@ export const CheckOut = ({ btn, cart, product}) => {
         email: ''
     })
 
+
     const {
         cartList,
         onAddCart,
-        cleanCart,
+        handleCleanCart,
         totalPrice
     } = useCartContext()
 
     //handles
+
     const handleSubmit = (event) => {
+        console.log('anda')
         event.preventDefault()
         if (cart === true) {
+            console.log('if')
             const order = {
                 buyer: formData,
-                items: cartList.map(({ id, name, price }) => ({ id, name, price })),
+                items: cartList.map(({id, name, price}) => {({ id, name, price})}),
+                date: new Date(),
                 total: totalPrice()
             }
             const db = getFirestore()
@@ -40,13 +46,17 @@ export const CheckOut = ({ btn, cart, product}) => {
                 .then(res => setId(res.id))
                 .catch(err => console.log(err))
                 .finally(() => {
-                    cleanCart()
+                    handleCleanCart(),
+                    window.location.replace('/compras')
                 })
+            
         } else {
+            console.log('else')
             const order = {
                 buyer: formData,
-                items: [{id: product.id, name: product.name, price: product.price}],
-                total: totalPrice()
+                items: [{ id: product.id, name: product.name, price: product.price}],
+                date: new Date(),
+                total: product.price
             }
             const db = getFirestore()
 
@@ -55,22 +65,21 @@ export const CheckOut = ({ btn, cart, product}) => {
             addDoc(queryCollection, order)
                 .then(res => setId(res.id))
                 .catch(err => console.log(err))
+                .finally(()=> {
+                    window.location.replace('/compras')
+                })
         }
-        window.location.href = '/'
+
     }
 
     const handleOnChange = (event) => {
-        console.log(event.target.name)
+        console.log(event.target.value)
         setFormData({
             ...formData,
             [event.target.name]: event.target.value
         })
     }
 
-
-    const handleModal = () => {
-        setIsOpen(!isOpen)
-    }
 
     return (
         <>

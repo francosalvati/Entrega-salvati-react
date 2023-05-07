@@ -1,13 +1,42 @@
-header{
+header {
     height: 75px;
     background: #333;
 }
 
-.logo{
+.logo {
     font-family: var(--fuente);
+    font-size: 30px;
+    transition: all .2s ease;
+
 }
 
-.toolbar{
+.logo:hover {
+    animation: led 2s;
+    text-shadow: 0 0 20px #fff;
+}
+
+@keyframes led {
+    0% {
+        text-shadow: 0 0 10px #fff;
+    }
+
+    0% {
+        text-shadow: 0 0 30px #fff;
+    }
+
+    60% {
+        text-shadow: 0 0 10px #fff;
+    }
+
+    100% {
+        text-shadow: 0 0 20px #fff;
+    }
+
+}
+
+
+
+.toolbar {
     margin: auto;
     max-width: 1300px;
 }

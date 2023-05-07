@@ -1,8 +1,5 @@
 
 import Product from "../Product/Product"
-
-//css
-import "./ProductList.css"
 import { memo } from "react"
 
 

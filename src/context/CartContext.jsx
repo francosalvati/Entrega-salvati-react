@@ -17,10 +17,9 @@ export const CartContextProvider = ({ children }) => {
 
 
     useEffect(() => {
-        const cartString = localStorage.getItem("cart");
-        const cartJson = JSON.parse(cartString);
+        const cartString = localStorage.getItem("cart")
+        const cartJson = JSON.parse(cartString)
         if (cartJson[0]) {
-            console.log(cartJson)
             setCartList(cartJson);
         }
     }, [])
@@ -40,8 +39,6 @@ export const CartContextProvider = ({ children }) => {
                 ...cartList,
                 newProduct
             ])
-
-            console.log(cartList)
         } else {
             cartList[indexProduct].quantity += newProduct.quantity
             cartList[indexProduct].stock = newProduct.stock
@@ -54,7 +51,6 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const deleteProduct = (pid, quantity) => {
-        console.log(pid)
         const productA = cartList.filter(p => p.id === pid)
         setCartList(cartList.filter(p => p.id !== pid))
         const intQuantity = parseInt(quantity)
@@ -65,7 +61,6 @@ export const CartContextProvider = ({ children }) => {
 
     const handleCleanCart = () => {
         cartList.forEach(p => {
-            console.log(p)
             const db = getFirestore()
             const productDoc = doc(db, "products", p.id)
             updateDoc(productDoc, { stock: p.stock + p.quantity })
@@ -74,15 +69,8 @@ export const CartContextProvider = ({ children }) => {
         cleanCart()
     }
 
-    const handleQuantity = (pid, quantity) => {
-
-        const product = cartList.filter(p => pid === p.id)
-        product.quantity = quantity;
-
-        const db = getFirestore()
-
-        const productDoc = doc(db, "products", p.id)
-        updateDoc(productDoc, { stock: product.stock += product.quantity })
+    const handleQuantity = () => {
+        
     }
 
     const totalPrice = () => {

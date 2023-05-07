@@ -7,7 +7,7 @@ import { ProductsContainer } from "./pages/ProductsContainer/ProductsContainer";
 import { DetailsContainer } from "./pages/DetailsContainer/DetailsContainer";
 import SideBar from "./components/SideBar/SideBar";
 import { Toolbar } from "./components/Toolbar/Toolbar";
-import { ComprasContainer } from "./pages/Compras/Compras";
+import { ComprasContainer } from "./pages/Compras/ComprasContainer";
 
 
 function App() {

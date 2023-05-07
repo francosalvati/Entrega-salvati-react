@@ -27,14 +27,10 @@ html {
 
 ::-webkit-scrollbar {
   width: 5px;
-  /* Ancho de la barra */
   background-color: transparent;
-  /* Fondo transparente */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #666;
-  /* Color de la barra */
-  border-radius: 3px;
-  /* Borde redondeado */
+  background-color: #fff;
+  border-radius: 10px;
 }

@@ -1,7 +1,7 @@
 
 
 export const Modal = ({ handleSubmit, handleOnChange, formData }) => {
-    
+
     return (
         <>
             <div className="modal fade text-start" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -13,7 +13,7 @@ export const Modal = ({ handleSubmit, handleOnChange, formData }) => {
                         </div>
                         <div className="modal-body">
 
-                            <form className="row g-3 needs-validation w-100 form-floating" onSubmit={handleSubmit}> 
+                            <form className="row g-3 needs-validation w-100 form-floating" onSubmit={handleSubmit}>
                                 <div className="col-12">
                                     <label htmlFor="validationCustom01" className="form-label">Nombre</label>
                                     <input type="text"
@@ -21,9 +21,10 @@ export const Modal = ({ handleSubmit, handleOnChange, formData }) => {
                                         name="name"
                                         placeholder="Nombre.."
                                         onChange={handleOnChange}
-                                        value={formData.name} />
-                                    <div className="valid-feedback">
-                                        Looks good!
+                                        value={formData.name}
+                                        required />
+                                    <div className="invalid-feedback">
+                                        Please choose a username.
                                     </div>
                                 </div>
 
@@ -34,9 +35,10 @@ export const Modal = ({ handleSubmit, handleOnChange, formData }) => {
                                         name="email"
                                         placeholder="example@email.com"
                                         onChange={handleOnChange}
-                                        value={formData.email} />
-                                    <div className="valid-feedback">
-                                        Looks good!
+                                        value={formData.email}
+                                        required />
+                                    <div className="invalid-feedback">
+                                        Please choose a username.
                                     </div>
                                 </div>
 
@@ -49,7 +51,11 @@ export const Modal = ({ handleSubmit, handleOnChange, formData }) => {
                                         name="adress"
                                         placeholder="Street 123"
                                         onChange={handleOnChange}
-                                        value={formData.adress} />
+                                        value={formData.adress}
+                                        required />
+                                    <div className="invalid-feedback">
+                                        Please choose a username.
+                                    </div>
                                 </div>
 
                                 <div className="col-12">
