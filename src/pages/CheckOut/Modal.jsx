@@ -1,6 +1,6 @@
 
 
-export const Modal = ({ handleSubmit, handleOnChange, formData }) => {
+export const Modal = ({ handleSubmit, handleOnChange, formData, ref }) => {
 
     return (
         <>
@@ -59,7 +59,7 @@ export const Modal = ({ handleSubmit, handleOnChange, formData }) => {
                                 </div>
 
                                 <div className="col-12">
-                                    <button className="btn btn-primary" type="submit">Comprar</button>
+                                    <button className="btn btn-primary" data-bs-dismiss="modal"  type="submit" >Comprar</button>
                                 </div>
                             </form>
                         </div>

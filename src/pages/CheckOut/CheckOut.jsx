@@ -1,26 +1,26 @@
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Modal } from "./Modal"
 import { useCartContext } from "../../context/CartContext"
 import { addDoc, collection, getFirestore } from "firebase/firestore"
-
+import { useNavigate } from 'react-router'
 
 export const CheckOut = ({ btn, cart, product }) => {
 
-    console.log(product)
     //states
+    const myModal = document.getElementById('exampleModal');
+    console.log(myModal)
+
     const [id, setId] = useState(null)
-    const [isOpen, setIsOpen] = useState(false)
     const [formData, setFormData] = useState({
         name: '',
         adress: '',
         email: ''
     })
-
+    const navigate = useNavigate()
 
     const {
         cartList,
-        onAddCart,
         handleCleanCart,
         totalPrice
     } = useCartContext()
@@ -28,26 +28,24 @@ export const CheckOut = ({ btn, cart, product }) => {
     //handles
 
     const handleSubmit = (event) => {
-        console.log('anda')
         event.preventDefault()
         if (cart === true) {
-            console.log('if')
             const order = {
                 buyer: formData,
-                items: cartList.map(({id, name, price}) => {({ id, name, price})}),
+                items: cartList.map(({id, name, price}) => ({ id, name, price})),
                 date: new Date(),
                 total: totalPrice()
             }
             const db = getFirestore()
-
+            
             const queryCollection = collection(db, 'orders')
-
+            console.log(order)
             addDoc(queryCollection, order)
                 .then(res => setId(res.id))
                 .catch(err => console.log(err))
                 .finally(() => {
                     handleCleanCart(),
-                    alert('su compra fue realizada')
+                    navigate('/compras')
                 })
             
         } else {
@@ -66,7 +64,7 @@ export const CheckOut = ({ btn, cart, product }) => {
                 .then(res => setId(res.id))
                 .catch(err => console.log(err))
                 .finally(()=> {
-                    alert('su compra fue realizada')
+                    navigate('/compras')
                 })
         }
 
@@ -79,8 +77,7 @@ export const CheckOut = ({ btn, cart, product }) => {
             [event.target.name]: event.target.value
         })
     }
-
-
+   
     return (
         <>
 
@@ -94,7 +91,7 @@ export const CheckOut = ({ btn, cart, product }) => {
                     </>
                     :
                     <>
-                        <button type="button" className="btn btn-primary w-75 text-nowrap" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" className="btn btn-primary w-75 text-nowrap" data-bs-toggle="modal"data-bs-target="#exampleModal">
                             {btn}
                         </button>
                         <Modal formData={formData} handleOnChange={handleOnChange} handleSubmit={handleSubmit} />

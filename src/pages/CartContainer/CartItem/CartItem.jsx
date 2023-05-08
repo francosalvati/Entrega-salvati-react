@@ -27,7 +27,7 @@ export const CartItem = ({ product, deleteProduct }) => {
                     <span className="item__delete" onClick={handleDeleteProduct}>Borrar Elemento</span>
                 </div>
                 <div className="col d-flex align-items-center justify-content-between">
-                    <Counter init={product.quantity} max={product.stock} />
+                    {/* <Counter init={product.quantity} max={product.stock} /> */}
                     <span className="item__price fs-5 mx-2">${product.price}</span>
                 </div>
             </div>

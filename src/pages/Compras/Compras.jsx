@@ -13,9 +13,9 @@ export const Compras = ({ order }) => {
                 </div>
                 <ul className="list-group list-group-flush">
                     {
-                        order.items.map(p => {
+                        order.items.map((p, index) => {
                             return (
-                                <li className="list-group-item d-flex justify-content-between align-items-center">
+                                <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
                                     {p.name}
                                     <span className="badge bg-primary rounded-pill">{p.quantity}</span>
                                     <span className="badge bg-secondary rounded-pill">{p.price} $</span>

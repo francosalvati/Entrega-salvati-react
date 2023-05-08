@@ -19,14 +19,15 @@ export const CartContextProvider = ({ children }) => {
     useEffect(() => {
         const cartString = localStorage.getItem("cart")
         const cartJson = cartString ? JSON.parse(cartString) : []
-        if (Array.isArray(cartJson) && cartJson.length > 0){
+        console.log(cartJson)
+        if (Array.isArray(cartJson) && cartJson.length > 0) {
             setCartList(cartJson);
         }
     }, [])
 
-    // useEffect(() => {
-    //     localStorage.setItem('cart', JSON.stringify(cartList))
-    // }, [cartList])
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cartList))
+    }, [cartList])
 
 
     //funciones
@@ -56,7 +57,7 @@ export const CartContextProvider = ({ children }) => {
         const intQuantity = parseInt(quantity)
         const db = getFirestore()
         const productDoc = doc(db, "products", pid)
-        updateDoc(productDoc, { stock: productA[0].stock + intQuantity} )
+        updateDoc(productDoc, { stock: productA[0].stock + intQuantity })
     }
 
     const handleCleanCart = () => {
@@ -70,7 +71,7 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const handleQuantity = () => {
-        
+
     }
 
     const totalPrice = () => {
