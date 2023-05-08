@@ -24,9 +24,9 @@ export const CartContextProvider = ({ children }) => {
         }
     }, [])
 
-    useEffect(() => {
-        localStorage.setItem('cart', JSON.stringify(cartList))
-    }, [cartList])
+    // useEffect(() => {
+    //     localStorage.setItem('cart', JSON.stringify(cartList))
+    // }, [cartList])
 
 
     //funciones
