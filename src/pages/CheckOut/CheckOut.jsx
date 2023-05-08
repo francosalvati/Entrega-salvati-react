@@ -47,7 +47,7 @@ export const CheckOut = ({ btn, cart, product }) => {
                 .catch(err => console.log(err))
                 .finally(() => {
                     handleCleanCart(),
-                    window.location.replace('../compras')
+                    alert('su compra fue realizada')
                 })
             
         } else {
@@ -66,7 +66,7 @@ export const CheckOut = ({ btn, cart, product }) => {
                 .then(res => setId(res.id))
                 .catch(err => console.log(err))
                 .finally(()=> {
-                    window.location.replace('../compras')
+                    alert('su compra fue realizada')
                 })
         }
 
