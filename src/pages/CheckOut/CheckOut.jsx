@@ -3,13 +3,12 @@ import { useRef, useState } from "react"
 import { Modal } from "./Modal"
 import { useCartContext } from "../../context/CartContext"
 import { addDoc, collection, getFirestore } from "firebase/firestore"
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 
 export const CheckOut = ({ btn, cart, product }) => {
 
     //states
     const myModal = document.getElementById('exampleModal');
-    console.log(myModal)
 
     const [id, setId] = useState(null)
     const [formData, setFormData] = useState({
